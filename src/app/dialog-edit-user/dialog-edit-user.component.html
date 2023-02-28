@@ -1,6 +1,6 @@
 <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
 
-<h1 mat-dialog-title>Add a new User</h1>
+<h1 mat-dialog-title>Edit User</h1>
 <div mat-dialog-content>
   <div class="name-input-container">
     <mat-form-field class="mr-16" appearance="outline">
@@ -25,22 +25,8 @@
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
   </div>
-  <mat-form-field class="full-width" appearance="outline">
-    <mat-label>Street + Housnumber</mat-label>
-    <input [disabled]="loading" [(ngModel)]="user.street" matInput placeholder="Your Street + Housnumber">
-  </mat-form-field>
-  <div>
-    <mat-form-field class="mr-16" appearance="outline">
-      <mat-label>Zip Code</mat-label>
-      <input [disabled]="loading" [(ngModel)]="user.zipCode" matInput placeholder="Your Zip Code">
-    </mat-form-field>
-    <mat-form-field appearance="outline">
-      <mat-label>City</mat-label>
-      <input [disabled]="loading" [(ngModel)]="user.city" matInput placeholder="Your City">
-    </mat-form-field>
-  </div>
   <div mat-dialog-actions>
     <button [disabled]="loading" mat-button (click)="onNoClick()">Cancel</button>
-    <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Create</button>
+    <button [disabled]="loading" mat-button (click)="saveUser()" cdkFocusInitial>Edit</button>
   </div>
 </div>

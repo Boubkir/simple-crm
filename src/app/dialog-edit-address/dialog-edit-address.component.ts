@@ -4,31 +4,30 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { User } from 'src/models/user.class';
 
 @Component({
-  selector: 'app-dialog-add-user',
-  templateUrl: './dialog-add-user.component.html',
-  styleUrls: ['./dialog-add-user.component.scss'],
+  selector: 'app-dialog-edit-address',
+  templateUrl: './dialog-edit-address.component.html',
+  styleUrls: ['./dialog-edit-address.component.scss'],
 })
-export class DialogAddUserComponent {
-  user = new User();
+export class DialogEditAddressComponent {
+  user: User;
   birthDate: Date;
   loading: boolean = false;
+  userId: string;
 
   constructor(
     private firestore: AngularFirestore,
-    public dialogRef: MatDialogRef<DialogAddUserComponent>
+    public dialogRef: MatDialogRef<DialogEditAddressComponent>
   ) {}
 
   saveUser() {
-    this.user.birthDate = this.birthDate.getTime();
-    console.log('Current User is', this.user);
     this.loading = true;
     this.firestore
       .collection('users')
-      .add(this.user.toJSON())
-      .then((result: any) => {
+      .doc(this.userId)
+      .update(this.user.toJSON())
+      .then(() => {
         this.loading = false;
-        this.dialogRef.close();
-        console.log('Adding user finished', result);
+        this.onNoClick();
       });
   }
 

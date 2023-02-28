@@ -1,0 +1,43 @@
+.user-detail-header {
+  min-height: 250px;
+  background-color: #E1FB5B;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 16px;
+
+  img {
+    height: 100px;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+
+  button{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+.user-ingormation {
+  margin-left: 24px;
+
+  h2 {
+    margin-bottom: 0;
+  }
+}
+
+.address-card{
+
+  mat-card-title{
+    padding-top: 16px;
+  }
+
+  button{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+

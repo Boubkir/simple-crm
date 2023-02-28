@@ -1,0 +1,28 @@
+<mat-card class="user-detail-header relative">
+  <button [matMenuTriggerFor]="editUser" mat-icon-button>
+    <mat-menu #editUser="matMenu">
+      <button (click)="editUserDialog()" mat-menu-item>Edit</button>
+    </mat-menu>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <img src="assets/img/1.webp" alt="">
+  <div class="user-ingormation">
+    <h2>{{user.firstname}} {{user.lastname}}</h2>
+    <p>{{user.email}}</p>
+  </div>
+</mat-card>
+<mat-card class="mt-32 relative address-card">
+  <button [matMenuTriggerFor]="editAddress" mat-icon-button>
+    <mat-menu #editAddress="matMenu">
+      <button (click)="editAddressDialog()" mat-menu-item>Edit</button>
+    </mat-menu>
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-card-content>
+    <mat-card-title>Address</mat-card-title>
+  </mat-card-content>
+  <mat-card-content>
+    {{ user.street }} <br>
+    {{ user.zipCode}} {{user.city}}
+  </mat-card-content>
+</mat-card>
